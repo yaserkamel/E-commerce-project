@@ -11,8 +11,8 @@ const HoomBrandHook = () => {
  
   const brand = useSelector(state => state.allBrand.brand)
   const loading = useSelector(state => state.allBrand.loading)
-  console.log(brand.data)
-  console.log(loading)
+  // console.log(brand.data)
+  // console.log(loading)
 
   return[brand,loading]
 }

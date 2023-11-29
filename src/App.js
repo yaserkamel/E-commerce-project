@@ -10,6 +10,7 @@ import AdminAddSubCategoryPage from "./pages/Admin/AdminAddSubCategoryPage";
 import AdminAddProductsPage from "./pages/Admin/AdminAddproductsPage";
 import AdminAllOrdersPage from "./pages/Admin/AdminAllOrdersPage";
 import AdminAllProductsPage from "./pages/Admin/AdminAllProductsPage";
+import AdminEditCategoryPage from "./pages/Admin/AdminEditCategoryPage";
 import AdminEditCouponPage from "./pages/Admin/AdminEditCouponPage";
 import AdminEditProductPage from "./pages/Admin/AdminEditProductPage";
 import AdminOrderDetalisPage from "./pages/Admin/AdminOrderDetalisPage";
@@ -37,8 +38,7 @@ import { BrowserRouter ,Routes , Route  } from "react-router-dom";
 function App() {
 
   const [isUser,isAdmin,userData]=ProtectedRootHook()
-  // console.log(isUser)
-  // console.log(isAdmin)
+  
   return (
     <div className="font">
       <NavbarLogin/>
@@ -62,6 +62,7 @@ function App() {
           <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage/>}/>
           <Route path="/admin/addbrand" element={<AdminAddBrandPage/>}/>
           <Route path="/admin/addcategory" element={<AdminAddCategoryPage/>}/>
+          <Route path="/admin/editcategory/:id" element={<AdminEditCategoryPage/>}/>
           <Route path="/admin/addsubcategory" element={<AdminAddSubCategoryPage/>}/>
           <Route path="/admin/addproduct" element={<AdminAddProductsPage/>}/>
           <Route path="/admin/editproduct/:id" element={<AdminEditProductPage/>}/>

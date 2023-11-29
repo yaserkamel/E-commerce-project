@@ -10,17 +10,17 @@ const SearchCountResult = ({title , onClick}) => {
         onClick()
     }
     return (
-        <div className="d-flex justify-content-between pt-3 px-2">
-            <div className="sub-tile">{title}</div>
+        <div className="d-flex justify-content-between pt-3">
+            <div className="sub-title">{title}</div>
             <div className="search-count-text d-flex ">
                 <UnopDropdown
                     onAppear={handler}
                     onDisappearStart={handler}
                     trigger={
-                        <p className="mx-1">
+                        <p style={{fontFamily: 'Roboto'}} className="">
                             <img
-                                width="20px"
-                                height="20px"
+                                width="18px"
+                                height="18px"
                                 className="me-1"
                                 src={sort}
                                 alt=""

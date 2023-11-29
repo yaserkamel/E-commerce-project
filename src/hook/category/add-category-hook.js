@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import notify from '../useNotification';
-import { creatCategory } from '../../redux/action/categoryAction';
+import { creatCategory, getAllCategory } from '../../redux/action/categoryAction';
 import avatar from '../../images/avatar.png'
 
 
@@ -13,8 +13,10 @@ export const AddCategoryHook = () => {
     const [selectedFile, setSelectedFile]=useState(null)
     const [loading, setLoading]=useState(true)
     const [isPress, setIsPress]=useState(false)
+    const [loadingData, setLoadingData]= useState(true)
 
     const res = useSelector(state=>state.allCategory.category )
+    console.log(res)
 
     const onChangeName=(e)=>{
         e.persist()
@@ -35,9 +37,6 @@ export const AddCategoryHook = () => {
             return;
     }
 
-
-
-
     const formData = new FormData();
     formData.append("name" , name)
     formData.append("image" , selectedFile)
@@ -48,23 +47,40 @@ export const AddCategoryHook = () => {
     setIsPress(true)
     await dispatch(creatCategory(formData))
     setLoading(false)
-  }
+    }
 
     useEffect(()=>{
         if(loading === false) {
             setImg(avatar)
             setName('')
             setSelectedFile(null)
-            console.log('end')
             setLoading(true)
             setTimeout(()=> setIsPress(false), 1000)
 
-            if(res.status === 201)
-                notify("Added successfully","success"); 
-            else
+            if(res && res.status === 201){
+                notify("Added successfully","success");
+                setTimeout(()=> window.location.reload(false), 1500) 
+                
+            }else
                 notify("Add failed","error")
         }
     },[loading])
 
-    return [img,name,loading,isPress,handleSubmit,onImageChange,onChangeName]
+    useEffect(()=>{
+        const get=async()=>{
+            setLoadingData(true)
+            await dispatch(getAllCategory())
+            setLoadingData(false)
+        }
+        get()
+    },[])
+
+    let result=[]
+    try{
+        if(res.data)
+            result = res.data
+    }catch(e){}
+
+
+    return [img,name,loading,isPress,handleSubmit,onImageChange,onChangeName, result, loadingData]
 }

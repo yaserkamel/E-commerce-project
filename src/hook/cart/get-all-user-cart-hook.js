@@ -54,7 +54,7 @@ const GetAllUserCartHook = () => {
     }
   },[loading])
 
-  return [itemsNum, cartItems, totalCartPrice, couponNameRes, totalCartPriceAfterDiscount, cartID]
+  return [ itemsNum, cartItems, totalCartPrice, couponNameRes, totalCartPriceAfterDiscount, cartID, loading]
 }
 
 export default GetAllUserCartHook

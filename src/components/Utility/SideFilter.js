@@ -12,17 +12,17 @@ const SideFilter = () => {
     <div className="mt-3">
         <Row>
           <div className="d-flex flex-column mt-2">
-            <div className="filter-title">Category</div>
+            <div className="filter-title"> Filter by Category</div>
             <div className="d-flex mt-3">
-              <input type="checkbox" value="" />
-              <div className="filter-sub ms-2 ">All</div>
+              <input id='0' type="checkbox" value="" />
+              <label for='0' className="filter-sub ms-2 ">All</label>
             </div>
             {
               category ? (category.map((item, index)=>{
                 return (
                   <div key={index} className="d-flex mt-3">
-                    <input onChange={clickCategory} type="checkbox" value={item._id} />
-                    <div  className="filter-sub ms-2">{item.name}</div>
+                    <input id={item._id} onChange={clickCategory} type="checkbox" value={item._id} />
+                    <label for={item._id} className="filter-sub ms-2">{item.name}</label>
                   </div>
                 )
               })) : <h6>No Category Found</h6>
@@ -30,17 +30,17 @@ const SideFilter = () => {
           </div>
   
           <div className="d-flex flex-column mt-2">
-            <div className="filter-title mt-3">Brand</div>
+            <div className="filter-title mt-3">Filter by Brand</div>
             <div className="d-flex mt-3">
-              <input type="checkbox" value="" />
-              <div className="filter-sub ms-2 ">All</div>
+              <input id='01' type="checkbox" value="" />
+              <label for='01' className="filter-sub ms-2 ">All</label>
             </div>
             {
               brand ? (brand.map((item,index) => {
                 return (
                   <div key={index} className="d-flex mt-3">
-                    <input onChange={clickBrand} type="checkbox" value={item._id}/>
-                    <div className="filter-sub ms-2 ">{item.name}</div>
+                    <input id={item._id} onChange={clickBrand} type="checkbox" value={item._id}/>
+                    <label for={item._id} className="filter-sub ms-2 ">{item.name}</label>
                   </div>
                 )
               })) : <h6>No Brand Found</h6>
@@ -48,7 +48,7 @@ const SideFilter = () => {
             
           </div>
   
-          <div className="filter-title my-3">Price</div>
+          <div className="filter-title my-3"> Filter by Price</div>
           <div className="d-flex">
             <p className="filter-sub my-2">From:</p>
             <input

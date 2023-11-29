@@ -7,7 +7,7 @@ import AdminSideBar from '../../components/Admin/AdminSideBar'
 // import AdminOrderDetalis from '../../Components/Admin/AdminOrderDetalis'
 const AdminAddCategoryPage = () => {
     return (
-        <Container >
+        <Container style={{minHeight: 'calc(100vh - 70.6px)'}}>
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />

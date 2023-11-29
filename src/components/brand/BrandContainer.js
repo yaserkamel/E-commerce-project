@@ -1,12 +1,13 @@
 import React from 'react'
 import { Container, Row, Spinner } from 'react-bootstrap';
 import BrandCard from './BrandCard';
+import Breadcrumbs from '../Utility/Breadcrumbs';
 
 const BrandContainer = ({data, loading}) => {
 
     return (
         <Container>
-            <div className="admin-content-text mt-2 ">All Brands</div>
+            <Breadcrumbs/>
             <Row className='my-1 d-flex justify-content-between'>
                 {
                     loading === false ? (

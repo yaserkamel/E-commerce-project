@@ -6,7 +6,7 @@ const AdminSideBar = () => {
         <div className="sidebar">
             <div className="d-flex flex-column">
                 <Link to="/admin/allorders" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
+                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
                         Orders Management
                     </div>
                 </Link>
@@ -38,7 +38,7 @@ const AdminSideBar = () => {
                     </div>
                 </Link>
                 <Link to="/admin/addcoupon" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+                    <div className="admin-side-text my-1 p-2 mx-auto text-center">
                         Add Coupon
                     </div>
                 </Link>

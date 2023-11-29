@@ -2,8 +2,9 @@ import React, {useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToWishList, removeProductFromWishList } from '../../redux/action/wishListAction'
 import notify from '../useNotification'
-import favoff from "../../images/fav-off.png";
-import favon from "../../images/fav-on.png";
+import favoff from "../../images/fav-off2.png";
+import favon from "../../images/heart3.png";
+
 
 const ProductCardHook = (item, favProd) => {
     

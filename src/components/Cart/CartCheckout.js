@@ -21,7 +21,7 @@ const CartCheckout = ({cartItems,totalCartPrice, totalCartPriceAfterDiscount,cou
     
     return (
         <Row className="my-1 d-flex justify-content-center cart-checkout pt-3">
-            <Col xs="12" className="d-flex  flex-column  ">
+            <Col xs="12" className="d-flex  flex-column ">
                 <div className="d-flex  ">
                     <input
                         value={couponName}
@@ -34,12 +34,15 @@ const CartCheckout = ({cartItems,totalCartPrice, totalCartPriceAfterDiscount,cou
                 <div className="product-price d-inline w-100 my-3  border">
                     {
                         totalCartPriceAfterDiscount >=1 ?
-                        `(${totalCartPrice}SP)... After discount (${totalCartPriceAfterDiscount}SP)`:
-                        `${totalCartPrice} SP`
+                        (<div>
+                            <span style={{textDecoration:'line-through',marginRight: '10px',color: '#818181'}}>{totalCartPrice}$</span>
+                            {totalCartPriceAfterDiscount}$
+                        </div>): 
+                        `${totalCartPrice}$`
                     }
                 </div>
-                    <button  className="product-cart-add  w-100 px-2 d-inline " onClick={handleCheckOut} > Complete Purchase</button>
-                <button onClick={handleDeleteCart} className="product-cart-add w-100 px-2 my-2"> Clear Cart</button>
+                    <button  className="product-cart-add d-inline mt-0" onClick={handleCheckOut} > Complete Purchase</button>
+                <button onClick={handleDeleteCart} className="product-cart-add  my-2"> Clear Cart</button>
             </Col>
             <ToastContainer/>
         </Row>

@@ -18,11 +18,6 @@ const ViewAddressesHook = () => {
     get()
   },[])
 
-  useEffect(()=>{
-    if(loading===false){
-      
-    }
-  },[loading])
 
   return [allAddresses, loading]
 }

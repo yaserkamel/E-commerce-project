@@ -6,7 +6,7 @@ import AdminAddCoupon from '../../components/Admin/AdminAddCoupon'
 
 const AdminAddCouponpage = () => {
     return (
-        <Container >
+        <Container style={{minHeight: 'calc(100vh - 70.6px)'}}>
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                   <AdminSideBar />

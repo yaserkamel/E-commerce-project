@@ -13,7 +13,8 @@ const ChoosePayMethoud = () => {
     const [handleCreateOrderCard ] = OrderPayCardHook(addressDetails)
     const [type, setType] = useState()
 
-    const [, , totalCartPrice, , totalCartPriceAfterDiscount, ] = GetAllUserCartHook();
+    const [ , , totalCartPrice, , totalCartPriceAfterDiscount, , ] = GetAllUserCartHook();
+
 
     const changeMethode=(e)=>{
         setType(e.target.value)
@@ -84,15 +85,15 @@ const ChoosePayMethoud = () => {
             </div>
             
             <Row>
-                <Col xs="12" className="d-flex justify-content-end">
-                    <div className="product-price d-inline  border">
+                <Col xs="12" className="d-flex justify-content-end align-items-center">
+                    <div className=" product-price d-inline border">
                         {
                             totalCartPriceAfterDiscount >=1 ?
-                            `(${totalCartPrice}$)... After discount (${totalCartPriceAfterDiscount}$)`:
+                            `(${totalCartPrice}$)... After Discount (${totalCartPriceAfterDiscount}$)`:
                             `${totalCartPrice} $`
                         }
                     </div>
-                    <div onClick={handlePay} className="product-cart-add px-3 pt-2 d-inline ms-2"> اتمام الشراء</div>
+                    <div onClick={handlePay} className="product-cart-add ms-2 mt-0"> اتمام الشراء</div>
                 </Col>
             </Row>
             <ToastContainer/>

@@ -49,6 +49,6 @@ const authReducer = (state=initial ,action) => {
       }
     default:
       return state
-}
+  }
 }
 export default authReducer;

@@ -10,7 +10,7 @@ const UserProfile = () => {
         onChangeConfirmPassword,onChangeOldPassword]=
             ProfileHook()
     return (
-        <div>
+        <div style={{minHeight: 'calc(100vh - 80px)'}}>
 
         <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

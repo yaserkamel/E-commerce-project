@@ -8,6 +8,7 @@ export const AllBrandPageHook = () => {
 
   useEffect(()=>{
     dispatch(getAllBrand(4));
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   },[]) 
  
   const brand = useSelector(state => state.allBrand.brand)

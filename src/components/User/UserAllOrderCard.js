@@ -4,12 +4,13 @@ import mobile from '../../images/mobile.png'
 import { Link } from 'react-router-dom'
 
 const UserAllOrderCard = ({cartItem}) => {
+    
     return (
         <div>
             <Row className="d-flex mb-2">
-                <Col xs="3" md="2" className="d-flex justify-content-start">
+                <Col xs="3" md="2" className="d-flex justify-content-center" style={{objectFit: 'contain'}}>
                 <Link to={`/products/${cartItem.product._id}`} style={{textDecoration:"none"}}>
-                    <img width="93px" height="120px" src={cartItem.product.imageCover} alt="" />
+                    <img width="93px" height="120px" src={`http://127.0.0.1:8000/products/${cartItem.product.imageCover}`} alt="" />
                 </Link>
                 </Col>
                 <Col xs="8" md="6">

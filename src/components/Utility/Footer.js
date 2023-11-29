@@ -4,35 +4,48 @@ import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import twitter from "../../images/twitter.png";
 import phone from "../../images/phone.png";
+import footer_logo from '../../images/Assets/logo_big.png'
+import instagram_icon from '../../images/Assets/instagram_icon.png'
+import whatsapp_icon from '../../images/Assets/whatsapp_icon.png'
+import pinterster_icon from '../../images/Assets/pintester_icon.png'
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
-        <div className="footer-background footer mt-3 pt-2" style={{ maxHeight: "50px" }}>
-            <Container className="">
-                <Row className="d-flex justify-content-between align-items-center">
-                    <Col sm="6" className="d-flex align-items-center ">
-                        <div className="footer-shroot ">Terms&Conditions</div>
-                        <div className="footer-shroot mx-2">privacy policy</div>
-                        <div className="footer-shroot mx-2">Contact Us</div>
-                    </Col>
-                    <Col
-                        sm="6"
-                        className="d-flex justify-content-end align-items-center ">
-                        <div className="d-flex pt-3 mx-2">
-                            <img width="20px" height="20px" src={phone} alt="" />
-                            <p className="footer-phone">0122455346356</p>
-                        </div>
-                        <div style={{ cursor: "pointer" }}>
-                            <img width="20px" height="20px" src={facebook} alt="" />
-                        </div>
-                        <div style={{ cursor: "pointer" }} className="">
-                            <img width="20px" height="20px" src={instagram} alt="" />
-                        </div>
-                        <div style={{ cursor: "pointer" }} className="">
-                            <img width="20px" height="20px" src={twitter} alt="" />
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+        <div className='footer'>
+            <div className='footer-logo'>
+                <img src={footer_logo} alt=''/>
+                <p className='m-0'></p>
+            </div>
+            <ul className='footer-links'>
+                <a href='/products'>
+                    <li>Products</li>
+                </a>
+                <a href='/allCategory'>
+                    <li>Categories</li>
+                </a>
+                <a href='/allbrand'>
+                    <li>Brands</li>
+                </a>
+                <a href='/'>
+                    <li>Contact</li>
+                </a>
+            </ul>
+            <div className='footer-social-icon'>
+                <div className="footer-icons-container">
+                    <img src={instagram_icon} alt='' />
+                </div>
+                <div className="footer-icons-container">
+                    <img src={pinterster_icon} alt='' />
+                </div>
+                <div className="footer-icons-container">
+                    <img src={whatsapp_icon} alt='' />
+                </div>
+            </div>
+            <div className="footer-copyriht">
+                <hr/>
+                <p>Copyright © 2023 - Designed By Yaser Kamel & Mohammed Kashmar</p>
+            </div>
         </div>
     )
 }

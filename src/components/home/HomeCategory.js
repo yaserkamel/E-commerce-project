@@ -13,7 +13,7 @@ const HomeCategory = () => {
       <Row className='my-2 d-flex justify-content-between'>   
       {
         loading === false ? (
-        category.data ? (
+        category ? (
 
           category.data.slice(0,6).map((item, index)=>{
             return (

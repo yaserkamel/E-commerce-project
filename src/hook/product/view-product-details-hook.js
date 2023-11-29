@@ -9,6 +9,7 @@ const ViewProductDetailsHook = (id) => {
   
     const dispatch = useDispatch();
     useEffect(()=>{
+      window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       dispatch(getOneProduct(id))
     },[])
 
@@ -37,7 +38,7 @@ const ViewProductDetailsHook = (id) => {
     if(item.images){
       images = item.images.map((img) => {return { original: img }})
     }else{
-      images = [{original: `${mobile}`,}]
+      // images = [{original: `${mobile}`,}]
     } 
 
       

@@ -8,9 +8,11 @@ import { ToastContainer } from 'react-toastify'
 
 const UserAllOrder = () => {
   const [userName,result,paginate,orderData,onPress,loading]= UserGetAllOrderHook()
+
+  // console.log(orderData)
     return (
-        <div>
-        <div className="admin-content-text pb-4">Numbers Of Orders:{result}</div>
+        <div style={{minHeight: 'calc(100vh - 80px)'}}>
+        <div className="admin-content-text pb-4">Numbers Of Orders: {result}</div>
         <Row className='justify-content-between'>
         {
           loading === false ? (

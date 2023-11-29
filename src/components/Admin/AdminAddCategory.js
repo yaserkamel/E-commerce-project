@@ -2,10 +2,15 @@ import React from 'react'
 import { Col, Row, Spinner} from 'react-bootstrap'
 import { AddCategoryHook } from '../../hook/category/add-category-hook'
 import { ToastContainer } from 'react-toastify'
+import AdminCategoryCard from './AdminCategoryCard'
+import { Fade } from 'react-reveal'
 
 const AdminAddCategory = () => {
    
-    const [img,name,loading,isPress,handleSubmit,onImageChange,onChangeName] = AddCategoryHook()
+    const [img,name,loading,isPress,handleSubmit,onImageChange,onChangeName, result, loadingData] = AddCategoryHook()
+    console.log(result)
+
+   
 
     return (
         <div>
@@ -46,6 +51,24 @@ const AdminAddCategory = () => {
             {
                 isPress ? loading ? <Spinner className='m-auto' animation='border' variant='primary' /> : <h4>  completed added</h4> : null
             }
+
+            <Row>
+                <Col sm="8" className=''>
+                
+                {
+                    loadingData === false ?(
+                    result.length > 0 ?(result.map((cat, index)=>{
+                        return (
+                            <Fade left>
+                                <AdminCategoryCard  key={index} category={cat}/>
+                            </Fade>
+                        )
+                        })) : <h3>No Categories Found</h3>)
+                        : <Spinner  animation='border' variant='primary'/>
+                }
+                
+                </Col>
+            </Row>
 
             <ToastContainer />
         </div>

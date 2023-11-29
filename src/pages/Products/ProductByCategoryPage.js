@@ -5,8 +5,9 @@ import SideFilter from '../../components/Utility/SideFilter'
 import CardProductsContainer from '../../components/Products/CardProductsContainer'
 import Pagination from '../../components/Utility/Pagination'
 import ViewSearchProductsHook from '../../hook/product/view-search-product-hook'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import ViewAllProductsCategoryHook from '../../hook/product/view-all-products-category-hook'
+import Breadcrumbs from '../../components/Utility/Breadcrumbs'
 
 const ProductByCategoryPage = () => {
 
@@ -17,11 +18,15 @@ const ProductByCategoryPage = () => {
   else
   pageCount=0
 
+  const location = useLocation();
+  console.log(location)
+
   return (
     <div style={{minHeight:'670px'}}>
     <Container>
       <Row className='d-flex flex-row' >
         <Col sm='12'>
+          <Breadcrumbs/>
           <CardProductsContainer products={items} title='' btntitle='' link='/allCategory' msg='Not Found Products For This Category.'/>
         </Col>
       </Row>

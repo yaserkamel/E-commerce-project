@@ -1,78 +1,36 @@
-import React, { useState } from 'react'
-import { Carousel } from 'react-bootstrap'
+import React from 'react'
+import prod3 from "../../images/slider/shopping-removebg.png";
+import arrow from "../../images/Assets/arrow.png";
+import { faHandsClapping } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
-import sliderimg from "../../images/slider1.png";
-import slider4 from "../../images/slider4.png";
-import prod3 from "../../images/prod3.png";
-import prod4 from "../../images/prod4.png";
 const Slider = () => {
 
-  const [index, setIndex] = useState(0)
-    const handleSelect = (selectedIndex) => {
-        setIndex(selectedIndex)
-    }
-  return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item className="slider-background" interval={2000}>
-              <div className="d-flex flex-row justify-content-center align-items-center">
-                  <img
-                      style={{ height: "296px", width: "313.53px" }}
-                      className=""
-                      src={slider4}
-                      alt="First slide"
-                  />
-                  <div className="">
-                      <h3 className="slider-title"></h3>
-                      <p className="slider-text mx-5">Up to 50% Sale</p>
-                  </div>
-              </div>
-          </Carousel.Item>
-          <Carousel.Item className="slider-background2" interval={2000}>
-              <div className="d-flex flex-row justify-content-center align-items-center">
-                  <img
-                      style={{ height: "296px", width: "313.53px" }}
-                      className=""
-                      src={sliderimg}
-                      alt="First slide"
-                  />
-                <div className="">
-                  <h3 className="slider-title"></h3>
-                  <p className="slider-text  mx-5">Up to 50% Sale</p>
+    return (
+        <div className='hero'>
+            <div className='hero-left'>
+                <h2>NEW ARRIVALS ONLY</h2>
+                <div>
+                    <div className='hero-hand-icon'>
+                        <p>new</p>
+                        <FontAwesomeIcon icon={faHandsClapping} size="2xl" style={{color: "#e4cb11"}} />
+                    </div>
+                    <p>collections</p>
+                    <p>for every one</p>
                 </div>
-              </div>
-          </Carousel.Item>
-
-          <Carousel.Item className="slider-background3" interval={2000}>
-              <div className="d-flex flex-row justify-content-center align-items-center">
-                  <img
-                      style={{ height: "296px", width: "373.53px" }}
-                      className=""
-                      src={prod3}
-                      alt="First slide"
-                  />
-                  <div className="">
-                      <h3 className="slider-title"></h3>
-                      <p className="slider-text  mx-5">Up to 50% Sale</p>
-                  </div>
-              </div>
-          </Carousel.Item>
-
-          <Carousel.Item className="slider-background4" interval={2000}>
-              <div className="d-flex flex-row justify-content-center align-items-center">
-                  <img
-                      style={{ height: "296px", width: "373.53px" }}
-                      className=""
-                      src={prod4}
-                      alt="First slide"
-                  />
-                  <div className="">
-                      <h3 className="slider-title"></h3>
-                      <p className="slider-text  mx-5">Up to 50% Sale </p>
-                  </div>
-              </div>
-      </Carousel.Item>
-    </Carousel>
-  )
+                <Link to='/products' style={{textDecoration: 'none',}}>
+                    <div className='hero-latest-btn'>
+                        <div>latest collection</div>   
+                        <img src={arrow} alt='arrow'/>
+                    </div>
+                </Link>
+            </div>
+            <div className='hero-right'>
+                <img src={prod3} alt=''/>
+            </div>
+        </div>
+    )
 }
 
 export default Slider

@@ -18,17 +18,23 @@ const SidebarSearchHook = () => {
     }
     get();
   },[]) 
- 
+
   const allCat = useSelector(state => state.allCategory.category)
   const allBrand = useSelector(state => state.allBrand.brand)
 
   let category = [];
-  if(allCat.data)
+  try {
+    if(allCat.data)
     category = allCat.data
+  }catch(e){}
+  
 
   let brand = [];
-  if(allCat.data)
+  try{
+    if(allBrand.data)
     brand = allBrand.data
+  }catch(e){}
+  
 
   var queryCat = '' , queryBrand ='';
   const [catChecked,  setCatChecked] =  useState([]);

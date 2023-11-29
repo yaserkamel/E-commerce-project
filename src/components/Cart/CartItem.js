@@ -63,7 +63,7 @@ const CartItem = ({item}) => {
           </Row>
   
           <Row className="justify-content-between">
-            <Col sm="12" className=" d-flex flex-row justify-content-between">
+            <Col sm="12" className=" d-flex flex-row justify-content-between align-items-center">
               <div className="d-inline pt-2 d-flex">
                 <div className="cat-text  d-inline">Quantity</div>
                 <input

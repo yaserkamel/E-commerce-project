@@ -11,11 +11,12 @@ export const AllCategoryPageHook = () => {
       await dispatch(getAllCategory(3));
     }
     get()
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   },[]) 
  
   const category = useSelector(state => state.allCategory.category)
   const loading = useSelector(state => state.allCategory.loading)
-  console.log(category)
+  // console.log(category)
   // console.log(loading)
 
   let pageCount=0;

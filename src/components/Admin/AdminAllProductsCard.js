@@ -33,20 +33,17 @@ const AdminAllProductsCard = ({item}) => {
                 className="my-2"
                 style={{
                     width: "100%",
-                    height: "350px",
                     borderRadius: "8px",
                     border: "none",
                     backgroundColor: "#FFFFFF",
                     boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)",
                 }}>
-                <Row className="d-flex justify-content-center px-2">
+                <Row className="d-flex justify-content-center px-2 py-2">
                     <Col className=" d-flex justify-content-between">
                         <Link to={`/admin/editproduct/${item._id}`} style={{ textDecoration: "none" }}>
                             <div className="d-inline item-delete-edit">Edit</div>
                         </Link>
                         <div onClick={handleShow} className="d-inline item-delete-edit">Delete</div>
-                        
-                        
                     </Col>
                 </Row>
                 <Link to={`/products/${item._id}`} style={{ textDecoration: "none" }}>
@@ -61,15 +58,15 @@ const AdminAllProductsCard = ({item}) => {
                         </Card.Title>
                         <Card.Text>
                             <div className="d-flex justify-content-between">
-                                <div className="card-rate">{item.ratingsQuantity}</div>
+                                <div className="card-rate">⭐ {item.ratingsQuantity}</div>
                                 <div className="d-flex align-items-center">
                                     <div className="card-price">  {
                                         item.priceAfterDiscount >= 1 ? (
-                                        <div><span style={{textDecoration:'line-through',marginRight: '10px'}}>{item.price}</span>
-                                        {item.priceAfterDiscount}SP</div>    
-                                        ): `${item.price} SP`  
+                                        <div><span style={{textDecoration:'line-through',marginRight: '10px'}}>{item.price}$</span>
+                                        {item.priceAfterDiscount}$</div>    
+                                        ): `${item.price}$`  
                                     }</div>
-                                    <div className="card-currency mx-1">$</div>
+                                
                                 </div>
                             </div>
                         </Card.Text>

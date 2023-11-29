@@ -33,8 +33,8 @@ const RatePost = () => {
 return (
     <div>
     <Row className="mt-3 ">
-      <Col sm="12" className="d-flex">
-        <div className="rate-name  d-inline ms-3 mt-1 me-3">{name}</div>
+      <Col sm="12" className="d-flex align-items-center">
+        <div className="rate-name d-inline ms-4 mt-1 me-3">{name}</div>
         <ReactStars {...setting} />
       </Col>
     </Row>

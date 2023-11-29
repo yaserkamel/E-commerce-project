@@ -22,12 +22,12 @@ const ShopProductsPage = () => {
     <div style={{minHeight:'670px'}}>
       <CategoryHeader/>
       <Container>
-        <SearchCountResult onClick={getProduct} title={`There are ${results} results`}/>
+        <SearchCountResult onClick={getProduct} title={`${results} results`}/>
         <Row className='d-flex flex-row' >
-          <Col sm='2' xs='2' md='1' className='d-flex'>
+          <Col sm='3' xs='4' md='2' className='d-flex'>
             <SideFilter/>
           </Col>
-          <Col sm='10' xs='10' md='11'>
+          <Col sm='9' xs='8' md='10'>
             <CardProductsContainer products={items} title='' btntitle='' msg='No Results For Your Search'/>
           </Col>
         </Row>

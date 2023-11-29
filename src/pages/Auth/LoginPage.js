@@ -9,42 +9,39 @@ const LoginPage = () => {
   const [email, password, loading, onChangeEmail, onChangePassword,onSubmit,isPress] = LoginHook();
   
   return (
-      <Container style={{ minHeight: "680px" }}>
-        <Row className="py-5 d-flex justify-content-center ">
-          <Col sm="12" className="d-flex flex-column ">
-            <label className="mx-auto title-login">Login</label>
+    <div className="sign-up">
+      <Container className='signup-container'>
+        <Row className="">
+          <Col sm="12" className="signup-fields">
+            <h3 className="title-login">Login</h3>
               <input
                 value={email}
                 onChange={onChangeEmail}
-                placeholder="email..."
+                placeholder="Email Address"
                 type="text"
-                className="user-input my-3 text-center mx-auto"
+                className=""
               />
               <input
                 value={password}
                 onChange={onChangePassword}
-                placeholder="password..."
+                placeholder="Password"
                 type="password"
-                className="user-input text-center mx-auto"
+                className=""
               />
-              <button onClick={onSubmit} className="btn-login mx-auto mt-4">Login </button>
-              <label className="mx-auto my-4">
-                is not have an account ? {" "}
+              <button onClick={onSubmit} className="">Login</button>
+              <label className="">
+                Don't have an account ? {" "}
                 <Link to="/register" style={{textDecoration:'none'}}>
-                  <span style={{ cursor: "pointer" }} className="text-danger">
+                  <span>
                     Click Here
                   </span>
                 </Link>
+                <Link to="/user/forget-password" style={{textDecoration:'none'}}>
+                  <span className='d-block'>
+                    Forget password ?
+                  </span>
+                </Link>
               </label>
-
-              <label className="mx-auto my-4">
-              
-              <Link to="/user/forget-password" style={{textDecoration:'none'}}>
-                <span style={{ cursor: "pointer" }} className="text-danger">
-                  Forget password ?
-                </span>
-              </Link>
-            </label>
               {
                 isPress ? ( loading === true ? (
                   <Spinner className='m-auto' animation='border' role='status'></Spinner>
@@ -56,6 +53,7 @@ const LoginPage = () => {
         </Row>
         <ToastContainer/>
       </Container>
+    </div>
   )
 }
 

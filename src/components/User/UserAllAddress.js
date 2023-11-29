@@ -1,15 +1,15 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import UserAddressCard from './UserAddressCard'
 import ViewAddressesHook from '../../hook/user/view-addresses-hook'
 import SweetAlert from '../Utility/SweetAlert'
-import Spinner from '../Utility/Spinner'
+// import Spinner from '../Utility/Spinner'
 
 const UserAllAddress = () => {
     const [allAddresses, loading] = ViewAddressesHook();
     return (
-        <div>
+        <div style={{minHeight: 'calc(100vh - 80px)'}}>
             <div className="admin-content-text pb-4">All Addresses</div>
             <Row className='mb-5'>
                 {
@@ -19,7 +19,7 @@ const UserAllAddress = () => {
                                 <UserAddressCard key={index}  address={address} />
                             )
                         }) : <SweetAlert msg='Not Found Addresses'/>
-                    ) : <Spinner/>
+                    ) : <Spinner className='m-auto' animation='border' variant='primary'/>
                     
                 }
             </Row>

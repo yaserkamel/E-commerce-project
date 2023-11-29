@@ -7,7 +7,7 @@ import HoomBrandHook from '../../hook/brand/home-brand-hook';
 const BrandFeatured = ({title, btntitle}) => {
 
   const [brand, loading] = HoomBrandHook();
-  console.log(brand)
+  // console.log(brand)
 
   return (
     <Container >
@@ -15,7 +15,7 @@ const BrandFeatured = ({title, btntitle}) => {
       <Row className='my-2 d-flex justify-content-between'>
           {
             loading === false ? (
-            brand.data ? (
+            brand ? (
               brand.data.slice(0,6).map((item, index)=>{
                 return (
                   <BrandCard id={item._id}  key={index} img={item.image} />

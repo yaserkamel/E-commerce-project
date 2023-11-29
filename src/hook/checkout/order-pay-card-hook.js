@@ -10,8 +10,7 @@ const OrderPayCardHook = (addressDetails) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
-  const [, , , , , cartID] = GetAllUserCartHook()
-
+  const [, , , , , cartID,] = GetAllUserCartHook()
 
   const handleCreateOrderCard= async()=>{
     if(cartID === '0'){

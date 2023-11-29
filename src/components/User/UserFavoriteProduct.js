@@ -25,16 +25,16 @@ const UserFavoriteProduct = () => {
     useEffect(()=>{
         if(loading === false){
             if(res.status === 'success'){
-                console.log(res)
+                console.log(res.data)
                 setItems(res.data);
             }else
                 setItems([])
         }
     },[loading])
     
-    console.log(items.length)
+    // console.log(items.length)
     return (
-        <div>
+        <div style={{minHeight: 'calc(100vh - 80px)'}}>
             <div className="admin-content-text pb-4">Favorite List</div>
             <Row className='justify-content-start'>
                 <CardProductsContainer products={items} title='' btntitle='' msg='No Favorite Products'/> 

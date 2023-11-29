@@ -20,7 +20,7 @@ const CategoryHeader = () => {
           <Col className="d-flex justify-content-start py-2 flex-wrap">
             <div className="cat-text-header ">All</div>
           {
-           items ? ( items.data  ? (items.map((item,index)=>{
+            items ? ( items ? (items.map((item,index)=>{
             return (
               <Link to={`/products/category/${item._id}`}  style={{textDecoration:"none"}}>
               <div key={index} className="cat-text-header ">{item.name}</div>

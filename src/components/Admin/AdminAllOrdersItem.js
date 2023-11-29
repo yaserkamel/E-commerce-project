@@ -17,19 +17,19 @@ const AdminAllOrdersItem = ({item}) => {
                     </Row>
                     <Row className="justify-content-center">
                         <Col sm="12" className="">
-                            <div className=" py-1 cat-title">
-                                Name: {item.user.name || ""}
+                            <div className="  cat-title" style={{fontSize: '18px'}}>
+                                Name : {item.user.name || ""}
                             </div>
-                            <div className=" py-1 cat-title ">
-                                Email: {item.user.email || ""}
+                            <div className=" cat-title" style={{fontSize: '18px'}}>
+                                Email : {item.user.email || ""}
                             </div>
                         </Col>
                     </Row>
                   
 
                     
-            <Row className="d-flex justify-content-between">
-                <Col xs="6" className="">
+            <Row className="d-flex justify-content-between align-items-end py-2">
+                <Col xs="9" className="" >
                     <div>
                         <div className="d-inline">State Of Delivery:</div>
                         <div className="d-inline mx-2 stat">{item.isDelivered === true ? "Done" : "Not Done"} </div>
@@ -43,7 +43,7 @@ const AdminAllOrdersItem = ({item}) => {
                         <div className="d-inline mx-2 stat">{item.paymentMethodType === "cash" ? "Cash" : "CreditCard"} </div>
                     </div>
                 </Col>
-                <Col xs="6" className="d-flex justify-content-end">
+                <Col xs="3" className="d-flex justify-content-end">
                     <div>
                         <div className="barnd-text">{item.totalOrderPrice ||0} $</div>
                     </div>
